@@ -1,0 +1,86 @@
+<div class="dashboard-wrapper">
+
+  <div class="dashboard-card">
+
+    <!-- HEADER -->
+    <div class="header">
+
+      <h1>Task Dashboard</h1>
+
+      <div class="user-area">
+        <div class="email">{{ userEmail }}</div>
+        <div class="role">{{ userRole }}</div>
+
+        <button class="logout-btn" (click)="logout()">
+          Logout
+        </button>
+      </div>
+
+    </div>
+
+    <!-- ADD TASK -->
+    <div class="add-row">
+
+      <input
+        [(ngModel)]="title"
+        placeholder="Enter task title..."
+      />
+
+      <button (click)="createTask()">
+        Add Task
+      </button>
+
+    </div>
+
+    <!-- TASK LIST -->
+    <div *ngIf="tasks.length; else empty">
+
+      <div
+        *ngFor="let t of tasks; trackBy: trackById"
+        class="task-card"
+      >
+
+        <div class="task-left">
+
+          <div class="task-title">
+            {{ t.title }}
+          </div>
+
+          <span class="status" [ngClass]="t.status">
+            {{ t.status }}
+          </span>
+
+        </div>
+
+        <div class="task-actions">
+
+          <select
+            [value]="t.status"
+            (change)="updateStatus(t,$any($event.target).value)"
+          >
+            <option value="TODO">TODO</option>
+            <option value="IN_PROGRESS">IN_PROGRESS</option>
+            <option value="DONE">DONE</option>
+          </select>
+
+          <button
+            *ngIf="userRole==='Owner'"
+            class="delete-btn"
+            (click)="deleteTask(t.id)"
+          >
+            Delete
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <ng-template #empty>
+      <div class="empty">No tasks yet.</div>
+    </ng-template>
+
+  </div>
+
+</div>

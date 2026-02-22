@@ -1,0 +1,145 @@
+body {
+  background:#f4f6fb;
+  font-family: Arial, sans-serif;
+}
+
+.dashboard-wrapper {
+  display:flex;
+  justify-content:center;
+  padding:40px;
+}
+
+.dashboard-card {
+  width:800px;
+  background:white;
+  border-radius:14px;
+  padding:30px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* HEADER */
+
+.header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:20px;
+}
+
+.header h1 {
+  margin:0;
+}
+
+.user-area {
+  text-align:right;
+}
+
+.email {
+  font-size:14px;
+  color:#666;
+}
+
+.role {
+  font-size:12px;
+  color:#2563eb;
+  font-weight:bold;
+}
+
+/* ADD ROW */
+
+.add-row {
+  display:flex;
+  gap:10px;
+  margin-bottom:20px;
+}
+
+.add-row input {
+  flex:1;
+  padding:12px;
+  border-radius:8px;
+  border:1px solid #ddd;
+}
+
+button {
+  background:#2563eb;
+  border:none;
+  color:white;
+  padding:10px 16px;
+  border-radius:8px;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+button:hover {
+  transform:translateY(-1px);
+  background:#1d4ed8;
+}
+
+.logout-btn {
+  margin-top:5px;
+}
+
+.delete-btn {
+  background:#ef4444;
+}
+
+.delete-btn:hover {
+  background:#dc2626;
+}
+
+/* TASK CARD */
+
+.task-card {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px;
+  border-radius:10px;
+  margin-bottom:12px;
+  border:1px solid #eee;
+  transition:0.2s;
+}
+
+.task-card:hover {
+  background:#f9fafc;
+}
+
+.task-title {
+  font-weight:bold;
+}
+
+.task-actions {
+  display:flex;
+  gap:10px;
+}
+
+/* STATUS BADGES */
+
+.status {
+  font-size:12px;
+  padding:4px 8px;
+  border-radius:6px;
+  margin-top:5px;
+  display:inline-block;
+}
+
+.TODO {
+  background:#e0f2fe;
+  color:#0284c7;
+}
+
+.IN_PROGRESS {
+  background:#fef9c3;
+  color:#ca8a04;
+}
+
+.DONE {
+  background:#dcfce7;
+  color:#16a34a;
+}
+
+.empty {
+  text-align:center;
+  color:#888;
+  margin-top:20px;
+}
